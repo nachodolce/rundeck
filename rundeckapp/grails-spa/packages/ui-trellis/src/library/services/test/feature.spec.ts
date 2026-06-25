@@ -22,7 +22,7 @@ describe("getFeatureEnabled", () => {
       const result = await getFeatureEnabled("myFeature");
 
       expect(result).toBe(true);
-      expect(mockedApi.get).toHaveBeenCalledWith("/feature/myFeature");
+      expect(mockedApi.get).toHaveBeenCalledWith("feature/myFeature");
     });
 
     it("returns false when API response has enabled: false", async () => {
@@ -46,7 +46,7 @@ describe("getFeatureEnabled", () => {
 
       await getFeatureEnabled("enterpriseFeatureX");
 
-      expect(mockedApi.get).toHaveBeenCalledWith("/feature/enterpriseFeatureX");
+      expect(mockedApi.get).toHaveBeenCalledWith("feature/enterpriseFeatureX");
     });
   });
 
